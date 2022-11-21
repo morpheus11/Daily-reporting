@@ -16653,8 +16653,8 @@
 
             <div class="mb-3">
               <label for="dangerousCargo" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-boxes" viewBox="0 0 16 16">
-  <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
-</svg> TEU Cargo</label>
+                <path d="M7.752.066a.5.5 0 0 1 .496 0l3.75 2.143a.5.5 0 0 1 .252.434v3.995l3.498 2A.5.5 0 0 1 16 9.07v4.286a.5.5 0 0 1-.252.434l-3.75 2.143a.5.5 0 0 1-.496 0l-3.502-2-3.502 2.001a.5.5 0 0 1-.496 0l-3.75-2.143A.5.5 0 0 1 0 13.357V9.071a.5.5 0 0 1 .252-.434L3.75 6.638V2.643a.5.5 0 0 1 .252-.434L7.752.066ZM4.25 7.504 1.508 9.071l2.742 1.567 2.742-1.567L4.25 7.504ZM7.5 9.933l-2.75 1.571v3.134l2.75-1.571V9.933Zm1 3.134 2.75 1.571v-3.134L8.5 9.933v3.134Zm.508-3.996 2.742 1.567 2.742-1.567-2.742-1.567-2.742 1.567Zm2.242-2.433V3.504L8.5 5.076V8.21l2.75-1.572ZM7.5 8.21V5.076L4.75 3.504v3.134L7.5 8.21ZM5.258 2.643 8 4.21l2.742-1.567L8 1.076 5.258 2.643ZM15 9.933l-2.75 1.571v3.134L15 13.067V9.933ZM3.75 14.638v-3.134L1 9.933v3.134l2.75 1.571Z"/>
+              </svg> TEU Cargo</label>
               <input type="text" class="form-control" id="dangerousCargo"  placeholder="XX" >
             </div>
 
@@ -16664,124 +16664,187 @@
         <div class="col-lg-3">
           <div class="myInnerDiv">
             <div class="mb-3" >
-            </div>         
+              <span class="badge rounded-pill text-bg-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+              <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+              </svg> Voyage Condition </span>
+            </div>          
             <!-- Please select Vessel IMO start-->
             <div class="mb-3">
-                 <select class="form-select" id="Veesel_IMO_number" aria-label="Default select example">
-                      <option selected>Please select Vessel IMO number</option>
-                      <option value="1">7924401</option>
-                      <option value="2">8912481</option>
-                      <option value="3">8509820</option>
-                      <option value="4">1481836</option>
-                 </select>
-            </div>
-            <!-- Please select Vessel IMO end -->
-            <!-- Date input start-->
-            <div class="mb-3">
-              
-                    <label class="control-label" for="date_of_incident">A: [ date of incident : YYYY-MM-DD ]</label>
-                    <input class="form-control" id="date_of_incident" name="date" placeholder="YYYY-MM-DD" type="text"/> 
-            </div>
-            <!-- Date input end-->
-
-            <div class="mb-3">
-              <label for="deficiency_report_number" class="form-label">A: [ Deficiency report number ]</label>
-              <input type="text" class="form-control" id="deficiency_report_number"  placeholder="XXXXX" >
+              <label for="vesselCondition" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-battery-half" viewBox="0 0 16 16">
+                    <path d="M2 6h5v4H2V6z"/>
+                    <path d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"/>
+                  </svg> Vessel Cargo Condition</label>
+                 <select class="form-select" id="vesselCondition" aria-label="Default select example">
+                      <option selected>Please select Vessel Condition</option>
+                      <option value="1">Laden</option>
+                      <option value="2">Ballast</option>
+                  </select>
             </div>
 
             <div class="mb-3">
-              <label for="voyage_no" class="form-label">A: [ voyage no: XXXX ]</label>
-              <input type="text" class="form-control" id="voyage_no"  placeholder="XXXX" >
+              <label for="draftFwd" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
+                <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z"/>
+              </svg> Draft fwd. in mt</label>
+              <input type="text" class="form-control" id="draftFwd"  placeholder="X.X" >
+            </div> 
+
+            <div class="mb-3">
+              <label for="draftAft" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
+                <path d="M1 0a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h5v-1H2v-1h4v-1H4v-1h2v-1H2v-1h4V9H4V8h2V7H2V6h4V2h1v4h1V4h1v2h1V2h1v4h1V4h1v2h1V2h1v4h1V1a1 1 0 0 0-1-1H1z"/>
+              </svg> Draft aft. in mt</label>
+              <input type="text" class="form-control" id="draftAft"  placeholder="X.X" >
+            </div> 
+            
+            <div class="mb-3">
+              <label for="beaufortScale" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wind" viewBox="0 0 16 16">
+                <path d="M12.5 2A2.5 2.5 0 0 0 10 4.5a.5.5 0 0 1-1 0A3.5 3.5 0 1 1 12.5 8H.5a.5.5 0 0 1 0-1h12a2.5 2.5 0 0 0 0-5zm-7 1a1 1 0 0 0-1 1 .5.5 0 0 1-1 0 2 2 0 1 1 2 2h-5a.5.5 0 0 1 0-1h5a1 1 0 0 0 0-2zM0 9.5A.5.5 0 0 1 .5 9h10.042a3 3 0 1 1-3 3 .5.5 0 0 1 1 0 2 2 0 1 0 2-2H.5a.5.5 0 0 1-.5-.5z"/>
+              </svg> Beaufort scale</label>
+                 <select class="form-select" id="beaufortScale" aria-label="Default select example">
+                      <option value="0">0 - Calm</option>
+                      <option value="1">1 - Light air</option>
+                      <option value="2">2 - Light breeze</option>
+                      <option value="3">3 - Gentle breeze</option>
+                      <option value="4">4 - Moderate breeze</option>
+                      <option value="5">5 - Fresh breeze</option>
+                      <option value="6">6 - Strong breeze</option>
+                      <option value="7">7 - High wind, moderate gale, near gale</option>
+                      <option value="8">8 - Gale, fresh gale</option>
+                      <option value="9">9 - Strong/severe gale</option>
+                      <option value="10">10 - Storm,whole gale</option>
+                      <option value="11">11 - Violent storm</option>
+                      <option value="12">12 - Hurricane-force</option>
+                  </select>
             </div>
 
             <div class="mb-3">
-              <label for="voyage_no" class="form-label">
-              B: [ place of incident: at sea or in port? ]</label>
-                <select class="form-select" id="at_sea_or_in_port" aria-label="Default select example">
-                     <option selected>Select: at sea or in port</option>
-                     <option value="1">At Sea</option>
-                     <option value="2">At Port</option>          
-                </select>
+              <label for="windDirection" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
+                    <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                  </svg> Wind Direction</label>
+                 <select class="form-select" id="windDirection" aria-label="Default select example">
+                      <option value="0">N - 348.75 - 11.25</option>
+                      <option value="1">NNE - 11.25 - 33.75</option>
+                      <option value="2">NE - 33.75 - 56.25</option>
+                      <option value="3">ENE - 56.25 - 78.75</option>
+                      <option value="4">E - 78.75 - 101.25</option>
+                      <option value="5">ESE - 101.25 - 123.75</option>
+                      <option value="6">SE - 123.75 - 146.25</option>
+                      <option value="7">SSE - 146.25 - 168.75</option>
+                      <option value="8">S - 168.75 - 191.25</option>
+                      <option value="9">SSW - 191.25 - 213.75</option>
+                      <option value="10">SW - 213.75 - 236.25</option>
+                      <option value="11">WSW - 236.25 - 258.75</option>
+                      <option value="12">W - 258.75 - 281.25</option>
+                      <option value="13">WNW - 281.25 - 303.75</option>
+                      <option value="14">NW - 303.75 - 326.25</option>
+                      <option value="15">NNW - 326.25 - 348.75</option>
+                  </select>
             </div>
 
             <div class="mb-3">
-                <label for="type of report" class="form-label">
-                C: [ type of report  ]</label>
-                 <select class="form-select" id="type_of_report" aria-label="Default select example">
-                      <option selected>Type of Report</option>
-                      <option value="1">HAZARDOUS OCCURRENCE</option>
-                      <option value="2">NON-CONFORMITY</option>
-                      <option value="3">ACCIDENT</option>
-                 </select>
+              <label for="waveHeight" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tsunami" viewBox="0 0 16 16">
+                <path d="M.036 12.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zm0 2a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zM2.662 8.08c-.456 1.063-.994 2.098-1.842 2.804a.5.5 0 0 1-.64-.768c.652-.544 1.114-1.384 1.564-2.43.14-.328.281-.68.427-1.044.302-.754.624-1.559 1.01-2.308C3.763 3.2 4.528 2.105 5.7 1.299 6.877.49 8.418 0 10.5 0c1.463 0 2.511.4 3.179 1.058.67.66.893 1.518.819 2.302-.074.771-.441 1.516-1.02 1.965a1.878 1.878 0 0 1-1.904.27c-.65.642-.907 1.679-.71 2.614C11.076 9.215 11.784 10 13 10h2.5a.5.5 0 0 1 0 1H13c-1.784 0-2.826-1.215-3.114-2.585-.232-1.1.005-2.373.758-3.284L10.5 5.06l-.777.388a.5.5 0 0 1-.447 0l-1-.5a.5.5 0 0 1 .447-.894l.777.388.776-.388a.5.5 0 0 1 .447 0l1 .5a.493.493 0 0 1 .034.018c.44.264.81.195 1.108-.036.328-.255.586-.729.637-1.27.05-.529-.1-1.076-.525-1.495-.426-.42-1.19-.77-2.477-.77-1.918 0-3.252.448-4.232 1.123C5.283 2.8 4.61 3.738 4.07 4.79c-.365.71-.655 1.433-.945 2.16-.15.376-.301.753-.463 1.13z"/>
+              </svg> Wave Height in mtr</label>
+              <input type="text" class="form-control" id="waveHeight"  placeholder="X" >
+            </div> 
+
+            <div class="mb-3">
+              <label for="waveDirection" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
+                    <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                  </svg> Wave Direction</label>
+                 <select class="form-select" id="waveDirection" aria-label="Default select example">
+                      <option value="0">N - 348.75 - 11.25</option>
+                      <option value="1">NNE - 11.25 - 33.75</option>
+                      <option value="2">NE - 33.75 - 56.25</option>
+                      <option value="3">ENE - 56.25 - 78.75</option>
+                      <option value="4">E - 78.75 - 101.25</option>
+                      <option value="5">ESE - 101.25 - 123.75</option>
+                      <option value="6">SE - 123.75 - 146.25</option>
+                      <option value="7">SSE - 146.25 - 168.75</option>
+                      <option value="8">S - 168.75 - 191.25</option>
+                      <option value="9">SSW - 191.25 - 213.75</option>
+                      <option value="10">SW - 213.75 - 236.25</option>
+                      <option value="11">WSW - 236.25 - 258.75</option>
+                      <option value="12">W - 258.75 - 281.25</option>
+                      <option value="13">WNW - 281.25 - 303.75</option>
+                      <option value="14">NW - 303.75 - 326.25</option>
+                      <option value="15">NNW - 326.25 - 348.75</option>
+                  </select>
             </div>
 
             <div class="mb-3">
-                <label for="voyage_no" class="form-label">
-                D: [ department: deck, engine, catering, other? ]</label>
-                 <select class="form-select" id="select_department" aria-label="Default select example">
-                      <option selected>Deck</option>
-                      <option value="1">Engine</option>
-                      <option value="2">Catering</option>
-                      <option value="3">Other</option>
-                 </select>
+              <label for="swellHeight" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tsunami" viewBox="0 0 16 16">
+                <path d="M.036 12.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zm0 2a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65zM2.662 8.08c-.456 1.063-.994 2.098-1.842 2.804a.5.5 0 0 1-.64-.768c.652-.544 1.114-1.384 1.564-2.43.14-.328.281-.68.427-1.044.302-.754.624-1.559 1.01-2.308C3.763 3.2 4.528 2.105 5.7 1.299 6.877.49 8.418 0 10.5 0c1.463 0 2.511.4 3.179 1.058.67.66.893 1.518.819 2.302-.074.771-.441 1.516-1.02 1.965a1.878 1.878 0 0 1-1.904.27c-.65.642-.907 1.679-.71 2.614C11.076 9.215 11.784 10 13 10h2.5a.5.5 0 0 1 0 1H13c-1.784 0-2.826-1.215-3.114-2.585-.232-1.1.005-2.373.758-3.284L10.5 5.06l-.777.388a.5.5 0 0 1-.447 0l-1-.5a.5.5 0 0 1 .447-.894l.777.388.776-.388a.5.5 0 0 1 .447 0l1 .5a.493.493 0 0 1 .034.018c.44.264.81.195 1.108-.036.328-.255.586-.729.637-1.27.05-.529-.1-1.076-.525-1.495-.426-.42-1.19-.77-2.477-.77-1.918 0-3.252.448-4.232 1.123C5.283 2.8 4.61 3.738 4.07 4.79c-.365.71-.655 1.433-.945 2.16-.15.376-.301.753-.463 1.13z"/>
+              </svg> Swell Height in mtr</label>
+              <input type="text" class="form-control" id="swellHeight"  placeholder="X" >
+            </div> 
+
+            <div class="mb-3">
+              <label for="swellDirection" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
+                    <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                  </svg> Swell Direction</label>
+                 <select class="form-select" id="swellDirection" aria-label="Default select example">
+                      <option value="0">N - 348.75 - 11.25</option>
+                      <option value="1">NNE - 11.25 - 33.75</option>
+                      <option value="2">NE - 33.75 - 56.25</option>
+                      <option value="3">ENE - 56.25 - 78.75</option>
+                      <option value="4">E - 78.75 - 101.25</option>
+                      <option value="5">ESE - 101.25 - 123.75</option>
+                      <option value="6">SE - 123.75 - 146.25</option>
+                      <option value="7">SSE - 146.25 - 168.75</option>
+                      <option value="8">S - 168.75 - 191.25</option>
+                      <option value="9">SSW - 191.25 - 213.75</option>
+                      <option value="10">SW - 213.75 - 236.25</option>
+                      <option value="11">WSW - 236.25 - 258.75</option>
+                      <option value="12">W - 258.75 - 281.25</option>
+                      <option value="13">WNW - 281.25 - 303.75</option>
+                      <option value="14">NW - 303.75 - 326.25</option>
+                      <option value="15">NNW - 326.25 - 348.75</option>
+                  </select>
             </div>
 
             <div class="mb-3">
-              <label for="detailed_description_of_incident" class="form-label">E: [ detailed description of incident: what did happen? ]</label>
-              <textarea class="form-control" id="detailed_description_of_incident" rows="4"></textarea>
+              <label for="currentSpeed" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-water" viewBox="0 0 16 16">
+                <path d="M.036 3.314a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 3.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 6.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0L.314 9.964a.5.5 0 0 1-.278-.65zm0 3a.5.5 0 0 1 .65-.278l1.757.703a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.014-.406a2.5 2.5 0 0 1 1.857 0l1.015.406a1.5 1.5 0 0 0 1.114 0l1.757-.703a.5.5 0 1 1 .372.928l-1.758.703a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.014-.406a1.5 1.5 0 0 0-1.114 0l-1.015.406a2.5 2.5 0 0 1-1.857 0l-1.757-.703a.5.5 0 0 1-.278-.65z"/>
+              </svg> Current speed in knts</label>
+              <input type="text" class="form-control" id="currentSpeed"  placeholder="X" >
+            </div> 
+
+            <div class="mb-3">
+              <label for="currentDirection" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-compass" viewBox="0 0 16 16">
+                    <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z"/>
+                  </svg> Current Direction</label>
+                 <select class="form-select" id="currentDirection" aria-label="Default select example">
+                      <option value="0">N - 348.75 - 11.25</option>
+                      <option value="1">NNE - 11.25 - 33.75</option>
+                      <option value="2">NE - 33.75 - 56.25</option>
+                      <option value="3">ENE - 56.25 - 78.75</option>
+                      <option value="4">E - 78.75 - 101.25</option>
+                      <option value="5">ESE - 101.25 - 123.75</option>
+                      <option value="6">SE - 123.75 - 146.25</option>
+                      <option value="7">SSE - 146.25 - 168.75</option>
+                      <option value="8">S - 168.75 - 191.25</option>
+                      <option value="9">SSW - 191.25 - 213.75</option>
+                      <option value="10">SW - 213.75 - 236.25</option>
+                      <option value="11">WSW - 236.25 - 258.75</option>
+                      <option value="12">W - 258.75 - 281.25</option>
+                      <option value="13">WNW - 281.25 - 303.75</option>
+                      <option value="14">NW - 303.75 - 326.25</option>
+                      <option value="15">NNW - 326.25 - 348.75</option>
+                  </select>
             </div>
 
             <div class="mb-3">
-              <label for="why_did_it_happen" class="form-label">F: [ root cause: why did it happen? ]</label>
-              <textarea class="form-control" id="why_did_it_happen" rows="4"></textarea>
-            </div>
+              <button type="button" class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+  <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+</svg> Next Page <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-circle-fill" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM6.646 6.24c0-.691.493-1.306 1.336-1.306.756 0 1.313.492 1.313 1.236 0 .697-.469 1.23-.902 1.705l-2.971 3.293V12h5.344v-1.107H7.268v-.077l1.974-2.22.096-.107c.688-.763 1.287-1.428 1.287-2.43 0-1.266-1.031-2.215-2.613-2.215-1.758 0-2.637 1.19-2.637 2.402v.065h1.271v-.07Z"/>
+</svg></button>
 
-            <div class="mb-3">
-              <label for="proposed_corrective_action" class="form-label">G: [ proposed corrective action(s): how to         rectify? ]</label>
-              <textarea class="form-control" id="proposed_corrective_action" rows="3"></textarea>
-            </div>
-
-            <div class="mb-3">
-              <label for="proposed_preventive_action" class="form-label">H: [ proposed preventive action(s): what to do to avoid this in future? ]</label>
-              <textarea class="form-control" id="proposed_preventive_action" rows="3"></textarea>
-            </div>
-    
-            <div class="mb-3">
-                <label for="voyage_no" class="form-label">
-                Select Signature in Field</label>
-                 <select class="form-select" id="Select_Signature_in_Field" aria-label="Default select example">
-                      <option selected value="0">Master</option>
-                      <option value="1">C/E</option>
-                      <option value="2">C/O</option>
-                      <option value="3">2/O</option>
-                      <option value="4">2/E</option>  
-                      <option value="5">3/O</option>
-                      <option value="6">ECO</option>           
-                 </select>
-            </div>
-
-            <!-- input filepond start html -->
-            <div class="mb-3">
-                <input type="file" 
-                   class="filepond"
-                   name="filepond"
-                   multiple
-                   data-max-file-size="1MB"
-                   data-max-files="1"
-                   accept="   zip, 
-                              omt, 
-                              application/omt, 
-                              application/octet-stream, 
-                              application/zip, 
-                              application/x-zip, 
-                              application/x-zip-compressed" />
-            </div>
-            <!-- input filepond end html -->
-         
-            <div class="mb-3">
-              <button type="button" class="btn btn-primary"  data-bs-toggle="modal" data-bs-target="#modalWindowWithEmailBody" data-bs-whatever="incidents@shipsnavo.de"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-binoculars" viewBox="0 0 16 16">
-              <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
-              </svg> Preview</button>
             </div>
           </div>
         </div>
