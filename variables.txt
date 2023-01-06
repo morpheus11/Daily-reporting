@@ -1,0 +1,118 @@
+Revs count sea passage	revsCountSeaPassage	0
+Load % of MCR	loadOfMCR	
+Load indicator	loadIndicator	
+Hours ME on 75~80	hoursMEOn75MCRH	% MCR h
+Exhaust gas temp (average)	exhaustGasTempAverageDegc	degC
+Exhaust gas temp (max)	exhaustGasTempMaxDegc	degC
+ME unit with highest exh. Temp	mEUnitWithHighestExhTemp	
+T/C (fore) RPM 	tCForeRPMMin	1/min
+T/C (aft) RPM 	tCAftRPM1Min	1/min
+Scav air temp (receiver) degC	scavAirTempReceiverDegc	degC
+Air cooler (fore) diff. pressure 	airCoolerForeDiffPressureMmh	mmH20
+FO viscosity at 50	fOViscosityAtDegcCst	cSt
+SW Temperature	sWTemperatureDegc	degC
+ER temp degC	eRTempDegc	degC
+Shaft gen average power 	shaftGenAveragePowerKw	kW
+Specific FO consumption  	specificFOConsumptionGKwh	g/kWh
+Cyl oil-hi consumption 	cylOilHiConsumptionLtrs	ltrs
+Cyl oil-lo consumption 	cylOilLoConsumptionLtrs	ltrs
+Circ oil added to sump tank 	circOilAddedToSumpTankLtrs	ltrs
+Average Power	aux1AveragePower	kW
+AE Circ Oil Top Up	aux1AECircOilTopUp	ltrs
+AE Circ Oil Top Replaced	aux1AECircOilTopReplaced	ltrs
+Sump Tank LO Purifed For 	aux1SumpTankLOPurifedFor	h
+Average Power	aux2AveragePower	kW
+AE Circ Oil Top Up	aux2AECircOilTopUp	ltrs
+AE Circ Oil Top Replaced	aux2AECircOilTopReplaced	ltrs
+Sump Tank LO Purifed For 	aux2SumpTankLOPurifedFor	h
+Average Power	aux3AveragePower	kW
+AE Circ Oil Top Up	aux3AECircOilTopUp	ltrs
+AE Circ Oil Top Replaced	aux3AECircOilTopReplaced	ltrs
+Sump Tank LO Purifed For 	aux3SumpTankLOPurifedFor	h
+Average Power	aux4AveragePower	kW
+AE Circ Oil Top Up	aux4AECircOilTopUp	ltrs
+AE Circ Oil Top Replaced	aux4AECircOilTopReplaced	ltrs
+Sump Tank LO Purifed For 	aux4SumpTankLOPurifedFor	h
+incinerator MDO/MGO-hi	auxilincineratorMDOMGOhi	mt
+DG FO spec consumption	AuxildgFOSpecConsumption	g/k Wh
+Fresh water produced	AuxilfreshWaterProduced	mt
+ME Sump Tank Contents	robMESumpTankContents	ltrs
+HFO (In Use) Suphur Content	robHFOInUseSuphurContent	pct
+VLSFO (In Use) Suphur Content	robVLSFOInUseSuphurContent	pct
+ULSFO (In Use) Suphur Content	robULSFOInUseSuphurContent	pct
+MGO (In Use) Suphur Content	robMGOInUseSuphurContent	%
+MGO LS (In Use) Suphur Content	robMGOLSInUseSuphurContent	%
+Bilge Water	robBilgeWater	cub.m
+Stern Tube	loConsumptionSternTube	ltrs
+CPP	loConsumptionCPP	ltrs
+Reduction Gearbox	loConsumptionReductionGearbox	ltrs
+Air Compressors	loConsumptionAirCompressors	ltrs
+Bowthruster	loConsumptionBowthruster	ltrs
+Hatch Cover	loConsumptionHatchCover	ltrs
+Author	comAuthor	
+Alarm Codes	comAlarmCodes	
+Alarm Comments	comAlarmComments	
+Cyl oil-hi	rcvdCylOilHi	ltrs
+Cyl oil-lo	rcvdCylOilLo	ltrs
+Me circ. Oil	rcvdMeCircOil	ltrs
+Ae circ. Oil	rcvdAeCircOil	ltrs
+HSFO	rcvdHsfo	mt
+ULSFO	rcvdUlsfo	mt
+VLSFO	rcvdVlsfo	mt
+HSMDO/MGO	rcvdHsmdoMgo	mt
+LSMDO/MGO	rcvdLsmdoMgo	mt
+FW	rcvdFw	mt
+HFO	dischHfo	mt
+HFO ULS	dischHfoUls	mt
+Bilge water	dischBilgeWater	cub .m
+Sludge	dischSludge	cub .m
+Garbage	dischGarbage	cub .m
+ME T/C 1 temp in	appMeTcOneTempIn	degC
+ME T/C 1 temp out	appMeTcOneTempOut	degC
+ME T/C 2 temp in	appMeTcTwoTempIn	degC
+ME T/C 2 temp out	appMeTcTwoTempOut	degC
+FO temp at ME inlet	appFoTempAtMeInlet	degC
+LO temp at ME inlet	appLoTempAtMeInlet	degC
+Piston cooling LO press	appPistonCoolingLoPress	degC
+Piston cooling average temp out	appPistonCoolingAverageTempOut	degC
+Piston cooling max temp out	appPistonCoolingMaxTempOut	degC
+Unit with highest piston cooling temp	appUnitWithHighestPistonCoolingTemp	
+Piston underside average temp	appPistonUndersideAverageTemp	degC
+Piston underside highest temp	appPistonUndersideHighestTemp	degC
+Unit with highest piston underside  temp	appUnitWithHighestPistonUndersideTemp	
+ME cooling water pressure	appMeCoolingWaterPressure	bar
+ME cooling water average temp	appMeCoolingWaterAverageTemp	degC
+ME cooling water highest temp	appMeCoolingWaterHighestTemp	degC
+Unit with highest cooling water  temp	appUnitWithHighestCoolingWaterTemp	
+Thermo oil temp	appThermoOilTemp	degC
+ME HFO filter backflush	appMeHfoFilterBackflush	times/day
+ME LO filter backflush	appMeLoFilterBackflush	times/day
+ME servo oil filter backflush	appMeServoOilFilterBackflush	times/day
+Maine engine	runhrsMaineEngine	h
+A/E 1	runhrsAeOne	h
+A/E 2	runhrsAeTwo	h
+A/E 3	runhrsAeThree	h
+A/E 4	runhrsAeFour	h
+Em'cy G/E	runhrsEmcyGe	h
+Boiler burner	runhrsBoilerBurner	h
+Shaft generator	runhrsShaftGenerator	h
+Air compressor 1	runhrsAirCompressorOne	h
+Air compressor 2	runhrsAirCompressorTwo	h
+Air compressor 3	runhrsAirCompressorThree	h
+Air compressor 4	runhrsAirCompressorFour	h
+HFO purifier 1	runhrsHfoPurifierOne	h
+HFO purifier 2	runhrsHfoPurifierTwo	h
+MDO purifier	runhrsMdoPurifier	h
+ME LO purifier 1	runhrsMeLoPurifierOne	h
+ME LO purifier 2	runhrsMeLoPurifierTwo	h
+G/E LO purifier 1	runhrsGeLoPurifierOne	h
+G/E LO purifier 2	runhrsGeLoPurifierTwo	h
+Prov ref plant 1	runhrsProvRefPlantOne	h
+Prov ref plant 2	runhrsProvRefPlantTwo	h
+FWG	runhrsFwg	h
+incinerator	runhrsIncinerator	h
+Crane 1	runhrsCraneOne	h
+Crane 2	runhrsCraneTwo	h
+Crane 3	runhrsCraneThree	h
+Crane 4	runhrsCraneFour	h
+Crane 5	runhrsCraneFive	h
