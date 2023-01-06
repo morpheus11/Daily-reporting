@@ -1,3 +1,64 @@
+Date of report in UTC	dateOfReport	YYYY-MM-DD
+Time in UTC 24hrs format	timeInUtc	XX:XX
+Ship Time: UTC +/-	shipTimeInUtcPlusOrMinus	
+Steam time since last noon	steamTimeSinceLastNoon	0
+Distance sailed last noon	etmal	nm
+Average Speed last noon	averageSpeed	XX.X
+Steam time sea passage	steamTimeSeaPassage	0
+Speed Over Ground	speedOverGround	XX.X
+Heading	heading	XXX
+Distance to Go	distanceToGo	nm
+Latitude:	latDegree	89
+Latitude:	latMinutes	59.9
+Latitude:	latCardinalPoints	
+Longitude:	lonDegree	179
+Longitude:	lonMinutes	59.9
+Longitude:	lonCardinalPoints	
+M/E MCR %	meMcr	XX
+Idle / Drift Time hrs	idleDriftTime	XX:XX
+Cargo QTY on board in mt	cargoQty	XXXX
+Ballast qty in m3	ballastQty	XXXX
+GM	gM	X.X
+Dangerous Cargo in kg	dangerousCargo	XX
+TEU Cargo	teuCargo	XX
+HSFO (>0.50% S)	conHsfoZeroFive	XX.X
+VLSFO (0.50% S Max)	conVlsfoZeroFive	XX.X
+ULSFO (0.10% S Max)	conUlsfoZeroOne	XX.X
+HSMGO (>0.10% S)	conHsMgo	XX.X
+LSMGO (0.10% SMax)	conLsMgo	XX.X
+HSFO (>0.50% S)	hsfoZeroFive	XX.X
+VLSFO (0.50% S Max)	vlsfoZeroFive	XX.X
+ULSFO (0.10% S Max)	ulsfoZeroOne	XX.X
+HSMGO (>0.10% S)	hsMgo	XX.X
+LSMGO (0.10% SMax)	lsMgo	XX.X
+Vessel Cargo Condition	vesselCondition	
+Draft fwd. in mt	draftFwd	X.X
+Draft aft. in mt	draftAft	X.X
+Beaufort scale	beaufortScale	
+Wind Direction	windDirection	
+Wave Height in mtr	waveHeight	X
+Wave Direction	waveDirection	
+Swell Height in mtr	swellHeight	X
+Swell Direction	swellDirection	
+Current speed in knts	currentSpeed	X
+Current Direction	currentDirection	
+ROB Fresh Water in mt	robFreshWater	XX
+Consumtion Fresh Water in mt	conFreshWater	XX
+ROB Sludge in mt	robSludge	XX
+ROB AE circulating Oil in kg	robAeCircOil	XX
+ROB ME circulating Oil in kg	robMeCircOil	XX
+ROB Cylinder Oil in kg	robCylinderCircOil	XX
+ME RPM in rpm	meRpm	0
+Slip in pct	slipInPct	0
+ME Fuel Rack position	meFuelRack	0
+Average ME Power in kW	averageMePower	0
+ME TC1 RPM	meTc1Rpm	0
+ME TC2 RPM	meTc2Rpm	0
+ME TC3 RPM	meTc3Rpm	0
+Scavenge Air Pressure	scavEngeAir	0 bar
+AUX Engine in Use	auxEnginesInUse	
+AUX Circulation Oil Consumption	auxCirculationOilConsumption	in kg
+ME Cylinder Oil Consuption	mECylinderOilConsuption	in kg
 Revs count sea passage	revsCountSeaPassage	0
 Load % of MCR	loadOfMCR	
 Load indicator	loadIndicator	
