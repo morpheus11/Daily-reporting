@@ -110,7 +110,7 @@ padding:10px 20px 10px 20px!important;
 <td valign="top" align="center" style="padding:0;Margin:0;width:600px">
 <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tbody><tr style="border-collapse:collapse">
-<td align="center" style="padding:0;Margin:0;padding-left:0px;padding-right:0px;padding-bottom:25px;font-size:0"><img src="http://reporting.shipsnavo.de/daily/msg/img/<?= vesselImoSelectorUnderScore ?>.jpg" alt="Company logo" title="Company logo" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
+<td align="center" style="padding:0;Margin:0;padding-left:0px;padding-right:0px;padding-bottom:25px;font-size:0"><img version="001" src="http://reporting.shipsnavo.de/daily/msg/img/<?= vesselImoSelectorUnderScore ?>1.jpg?dummy=843843" alt="Company logo" title="Company logo" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="600"></td>
 </tr>
 <tr style="border-collapse:collapse">
 <td class="es-m-txt-c" align="center" style="padding:0;Margin:0;padding-left:20px;padding-right:20px;padding-bottom:25px"><h1 style="Margin:0;line-height:36px;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;font-size:30px;font-style:normal;font-weight:normal;color:#ffffff"><strong>Daily Reporting from:</strong><br><strong>mv "<?= vesselImoSelector?>"</strong></h1></td>
@@ -165,7 +165,7 @@ padding:10px 20px 10px 20px!important;
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Voyage #:  <?=voyageNumber?> </li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">From Port:  <?=fromPort?> </li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">To Port:  <?=toPort?> </li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Distance sailed last noon:  <?=etmal?> nm</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Distance between PoCs:  <?=distanceBetweenPoCs?> nm</li>
 
 
 </ul></td>
@@ -180,12 +180,12 @@ padding:10px 20px 10px 20px!important;
 <tbody><tr style="border-collapse:collapse">
 <td align="left" style="padding:0;Margin:0">
 <ul>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Steam time sea passage:  <?=steamTimeSeaPassage?> hrs</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Steam time between PoCs:  <?=steamTimeBetweenPoCs?> hrs</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Speed Over Ground:  <?=speedOverGround?> kn</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Heading:  <?=heading?> °</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Distance to Go:  <?=distanceToGo?> nm</li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Latitude:  <?=latDegree?> °<?=latMinutes?> <?=latCardinalPoints?> </li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Longitude::  <?=lonDegree?>°<?=lonMinutes?> <?=lonCardinalPoints?> </li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Latitude:  <?=latDegree?> °<?=latMinutes?>' <?=latCardinalPoints?> </li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Longitude::  <?=lonDegree?>°<?=lonMinutes?>' <?=lonCardinalPoints?> </li>
 
 </ul></td>
 </tr>
@@ -274,8 +274,8 @@ The scale and type of the map can be changed upon request to the developer</p></
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Cargo QTY on board in mt:  <?=cargoQty?> mt</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Ballast qty in m3:  <?=ballastQty?> m3</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">GM:  <?=gM?> m</li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">LSMGO (0.10% SMax):  <?=conLsMgo?> mt</li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">LSMGO (0.10% SMax):  <?=lsMgo?> mt</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">LSMGO (0.10% SMax) con.:  <?=conLsMgo?> mt</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">LSMGO (0.10% SMax) on board:  <?=lsMgo?> mt</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Vessel Cargo Condition:  <?=vesselCondition?> </li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Draft fwd. in mt:  <?=draftFwd?> m</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Draft aft. in mt:  <?=draftAft?> m</li>
@@ -313,9 +313,9 @@ The scale and type of the map can be changed upon request to the developer</p></
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Author:  <?=comAuthor?> </li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Alarm Codes:  <?=comAlarmCodes?> </li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Alarm Comments:  <?=comAlarmComments?> </li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Bilge water:  <?=dischBilgeWater?> mt</li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Sludge:  <?=dischSludge?> mt</li>
-<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Garbage:  <?=dischGarbage?> mt</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Bilge water discharged:  <?=dischBilgeWater?> mt</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Sludge discharged:  <?=dischSludge?> mt</li>
+<li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Garbage discharged:  <?=dischGarbage?> mt</li>
 <li style="-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:17px;Margin-bottom:15px;margin-left:0;color:#999999;font-size:14px">Captain initials:  <?=captainInitials?> </li>
 
 
@@ -358,7 +358,7 @@ The scale and type of the map can be changed upon request to the developer</p></
 <td class="es-m-p0r" valign="top" align="center" style="padding:0;Margin:0;width:82px">
 <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tbody><tr style="border-collapse:collapse">
-<td align="left" style="padding:0;Margin:0;padding-bottom:5px;font-size:0"><img src="https://lhwmy.stripocdn.email/content/guids/CABINET_beab6e625341cddf02c5b414a301308f/images/86691554376509943.png" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="82" height="82"></td>
+<td align="left" style="padding:0;Margin:0;padding-bottom:5px;font-size:0"><img src="http://reporting.shipsnavo.de/daily/msg/img/circle/google-gps.png" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="82" height="82"></td>
 </tr>
 </tbody></table></td>
 </tr>
@@ -368,10 +368,10 @@ The scale and type of the map can be changed upon request to the developer</p></
 <td align="left" style="padding:0;Margin:0;width:438px">
 <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tbody><tr style="border-collapse:collapse">
-<td class="es-m-txt-l" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#666666">Dial gauges</h4></td>
+<td class="es-m-txt-l" align="left" style="padding:0;Margin:0;padding-top:5px;padding-bottom:10px"><h4 style="Margin:0;line-height:120%;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;color:#666666">Drive to the Vessel</h4></td>
 </tr>
 <tr style="border-collapse:collapse">
-<td class="es-m-txt-l" align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14px">New versions of fuel consumption control will have dial gauges showing deviations from the norm</p></td>
+<td class="es-m-txt-l" align="left" style="padding:0;Margin:0"><p style="Margin:0;-webkit-text-size-adjust:none;-ms-text-size-adjust:none;mso-line-height-rule:exactly;font-family:arial, 'helvetica neue', helvetica, sans-serif;line-height:21px;color:#999999;font-size:14px">This is a <a href="<?=gpsGooglelink?>">link</a> containing the current geolocation of the vessel <?= vesselImoSelector?> for your smartphone navigation system.</p></td>
 </tr>
 </tbody></table></td>
 </tr>
@@ -477,7 +477,7 @@ The scale and type of the map can be changed upon request to the developer</p></
 <td class="es-m-p0r es-m-p20b" valign="top" align="center" style="padding:0;Margin:0;width:132px">
 <table style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px;background-position:center top" width="100%" cellspacing="0" cellpadding="0" role="presentation">
 <tbody><tr style="border-collapse:collapse">
-<td class="es-m-txt-l" valign="top" align="left" style="padding:0;Margin:0;padding-top:5px;padding-right:5px;width:70px;font-size:0"><img src="http://reporting.shipsnavo.de/daily/msg/img/circle/circle_mina.png" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="96" height="96"></td>
+<td class="es-m-txt-l" valign="top" align="left" style="padding:0;Margin:0;padding-top:5px;padding-right:5px;width:70px;font-size:0"><img version="001" src="http://reporting.shipsnavo.de/daily/msg/img/circle/circle_mina1.png?dummy=843843" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="96" height="96"></td>
 </tr>
 </tbody></table></td>
 </tr>
@@ -503,7 +503,7 @@ The scale and type of the map can be changed upon request to the developer</p></
 <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:132px">
 <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tbody><tr style="border-collapse:collapse">
-<td class="es-m-txt-l" valign="top" align="center" style="padding:0;Margin:0;padding-top:5px;padding-right:5px;width:70px;font-size:0"><img src="http://reporting.shipsnavo.de/daily/msg/img/circle/circle_mieke.png" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="96" height="96"></td>
+<td class="es-m-txt-l" valign="top" align="center" style="padding:0;Margin:0;padding-top:5px;padding-right:5px;width:70px;font-size:0"><img version="001" src="http://reporting.shipsnavo.de/daily/msg/img/circle/circle_mieke.png?dummy=843843" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="96" height="96"></td>
 </tr>
 </tbody></table></td>
 </tr>
@@ -554,7 +554,7 @@ The scale and type of the map can be changed upon request to the developer</p></
 <td class="es-m-p20b" align="left" style="padding:0;Margin:0;width:90px">
 <table width="100%" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tbody><tr style="border-collapse:collapse">
-<td class="es-m-txt-l" valign="top" align="left" style="padding:0;Margin:0;width:70px;font-size:0"><img src="http://reporting.shipsnavo.de/daily/msg/img/circle/circle_kaethe.png" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="90" height="90"></td>
+<td class="es-m-txt-l" valign="top" align="left" style="padding:0;Margin:0;width:70px;font-size:0"><img version="001" src="http://reporting.shipsnavo.de/daily/msg/img/circle/circle_kaethe.png?dummy=843843" alt="" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic" width="90" height="90"></td>
 </tr>
 </tbody></table></td>
 </tr>
@@ -596,10 +596,10 @@ The scale and type of the map can be changed upon request to the developer</p></
 <td align="center" style="padding:0;Margin:0;font-size:0">
 <table class="es-table-not-adapt es-social" cellspacing="0" cellpadding="0" role="presentation" style="mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse;border-spacing:0px">
 <tbody><tr style="border-collapse:collapse">
-<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Twitter" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/twitter-circle-white.png" alt="Tw" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
-<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Facebook" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/facebook-circle-white.png" alt="Fb" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
-<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Youtube" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/youtube-circle-white.png" alt="Yt" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
-<td valign="top" align="center" style="padding:0;Margin:0"><img title="Linkedin" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/linkedin-circle-white.png" alt="In" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Twitter" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/twitter-circle-white.png?dummy=843843" alt="Tw" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Facebook" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/facebook-circle-white.png?dummy=843843" alt="Fb" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+<td valign="top" align="center" style="padding:0;Margin:0;padding-right:10px"><img title="Youtube" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/youtube-circle-white.png?dummy=843843" alt="Yt" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
+<td valign="top" align="center" style="padding:0;Margin:0"><img title="Linkedin" src="https://lhwmy.stripocdn.email/content/assets/img/social-icons/circle-white/linkedin-circle-white.png?dummy=843843" alt="In" width="32" height="32" style="display:block;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic"></td>
 </tr>
 </tbody></table></td>
 </tr>
