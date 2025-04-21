@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body { 
+            background: url('https://marketplace.canva.com/EAFMoPta66Q/1/0/1600w/canva-black-and-white-mountains-desktop-wallpaper-RV-gcVciSZw.jpg') no-repeat center center fixed;
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #8b8383;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+		.icon {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+    <script>
+        
+    function encodeAndSubmit(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const combinedString = btoa(username + ':' + password);
+        const form = event.target;
+        const formData = new FormData();
+        formData.append('hash', combinedString);
+
+        fetch(form.action, { method: 'POST', body: formData })
+            .then(response => response.json())
+            .then(data => {
+                if (data.auth === "true") {
+                    // Redirect to another form page and pass data through URL or session storage
+                    sessionStorage.setItem('userData', JSON.stringify(data));
+                    window.location.href = data.logonPage;
+                } else {
+                    alert("Authentication failed!");
+                }
+            })
+            .catch(error => console.error("Error:", error));
+    }
+</script>
+
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h2 class="text-center"><img src="https://www.svgrepo.com/show/295699/lifebuoy-help.svg" class="icon" alt="Lifebuoy Icon"> Login Form</h2>
+        <form action="https://script.google.com/macros/s/AKfycbyo-yC5O7TeldI8VgFEwx58a4gzAdiqi3DQ_EUwcl1TG5qmA8Pk6jyMf7sIaTBo146a/exec" method="POST" onsubmit="encodeAndSubmit(event)">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </div>
+</body>
+</html>

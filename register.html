@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User Details</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body { 
+            background: url('https://marketplace.canva.com/EAFMoPta66Q/1/0/1600w/canva-black-and-white-mountains-desktop-wallpaper-RV-gcVciSZw.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #8b8383;
+        }
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .icon {
+            width: 40px;
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        #hashOutput {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-family: monospace;
+        }
+        .loading {
+            display: none;
+        }
+    </style>
+    <script>
+        // Function to generate Base64 hash (using btoa)
+        function generateHash(username, password) {
+            const combinedString = username + ':' + password; // Concatenate username and password with a colon
+            const hash = btoa(combinedString); // Base64 encode the combined string
+            return hash;
+        }
+
+        // Function to update the hash field when username or password is entered
+        function updateHashField() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (username && password) {
+                const hash = generateHash(username, password);
+                document.getElementById('hash').value = hash; // Set the hash value
+            } else {
+                document.getElementById('hash').value = ''; // Clear hash if fields are empty
+            }
+        }
+
+        // Function to handle form submission and send the data
+        function addUser(event) {
+            event.preventDefault();
+
+            // Show the loading spinner
+            document.getElementById('loadingSpinner').style.display = 'inline-block';
+
+            // Get the form data
+            const id = document.getElementById('id').value;
+            const username = document.getElementById('username').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const hash = document.getElementById('hash').value;
+            const auth = document.getElementById('auth').value;
+            const scriptId = document.getElementById('scriptId').value;
+            const fileId = document.getElementById('fileId').value;
+            const vslImage = document.getElementById('vslImage').value;
+            const logonPage = document.getElementById('logonPage').value;
+
+            // Define the user object
+            const userData = {
+                "id": id,
+                "username": username,
+                "name": name,
+                "email": email,
+                "hash": hash,
+                "auth": auth,
+                "scriptId": scriptId,
+                "fileId": fileId, 
+                "vslImage": vslImage,
+                "logonPage": logonPage
+            };
+
+            // Send the data to the server
+            fetch('https://example.com/your-api-endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(userData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle success
+                alert('User updated successfully!');
+                console.log(data);
+                document.getElementById('loadingSpinner').style.display = 'none';
+            })
+            .catch(error => {
+                // Handle error
+                console.error('Error:', error);
+                alert('Failed to update user.');
+                document.getElementById('loadingSpinner').style.display = 'none';
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center"><img src="https://www.svgrepo.com/show/295699/lifebuoy-help.svg" class="icon" alt="Lifebuoy Icon"> Edit User Details</h2>
+        <form onsubmit="addUser(event)">
+            <div class="form-group">
+                <label for="id">User ID</label>
+                <input type="text" class="form-control" id="id" name="id" value="54_daily" required>
+            </div>
+            <div class="form-group">
+                <label for="username">Username (Email)</label>
+                <input type="email" class="form-control" id="username" name="username" placeholder="Enter username (email)" oninput="updateHashField()" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" oninput="updateHashField()" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter full name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address" required>
+            </div>
+            <div class="form-group">
+                <label for="auth">Auth</label>
+                <input type="text" class="form-control" id="auth" name="auth" value="true" required>
+            </div>
+            <div class="form-group">
+                <label for="scriptId">Script ID</label>
+                <input type="text" class="form-control" id="scriptId" name="scriptId" value="AKfycbx4__vSWKDNv3q_mft7rQrKdmnXHFNeqG7QK4QXfUIW0yN7zqyDStw1fne3ofK_8Ye0bw" required>
+            </div>
+            <div class="form-group">
+                <label for="fileId">File ID</label>
+                <input type="text" class="form-control" id="fileId" name="fileId" value="1uBYxXHduDHE9VHXgb6mvN9A4dYxc-00v" required>
+            </div>
+            <div class="form-group">
+                <label for="vslImage">VSL Image</label>
+                <input type="text" class="form-control" id="vslImage" name="vslImage" value="7924401-304010786-6c490bcef5282096eb13b1c8050799cf" required>
+            </div>
+            <div class="form-group">
+                <label for="logonPage">Logon Page</label>
+                <input type="text" class="form-control" id="logonPage" name="logonPage" value="index.html" required>
+            </div>
+            <div class="form-group">
+                <label for="hash">Generated Hash</label>
+                <input type="text" class="form-control" id="hash" name="hash" placeholder="Hash will be displayed here" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <div id="loadingSpinner" class="loading text-center">
+                <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
