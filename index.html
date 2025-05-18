@@ -41110,7 +41110,7 @@
                 </li> -->
           
           <li class="nav-item">
-            <a class="nav-link"
+            <a id="report-link" class="nav-link" 
               href="https://docs.google.com/spreadsheets/d/1OmuN9k4O6OBTv3F1sFFzlKncLSc3Gi5UDreOik-avn4"><svg
                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-database-fill-lock" viewBox="0 0 16 16">
@@ -41145,12 +41145,27 @@
       </div>
       <!-- Page1Column1 -->
       <div class="col-lg-3">
+
+
         <div class="myInnerDiv">
+          <span class="badge rounded-pill text-bg-dark">
+
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+  <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+  <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+</svg> Message </span>
+ <div class="mb-3">
+            <label for="msgToAllParty" class="form-label">Msg to all party</label>
+            <textarea class="form-control" id="msgToAllParty" rows="4"></textarea>
+                      </div>
+
+
           <span class="badge rounded-pill text-bg-success"><svg xmlns="http://www.w3.org/2000/svg" width="16"
               height="16" fill="currentColor" class="bi bi-globe-europe-africa" viewBox="0 0 16 16">
               <path
                 d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM3.668 2.501l-.288.646a.847.847 0 0 0 1.479.815l.245-.368a.809.809 0 0 1 1.034-.275.809.809 0 0 0 .724 0l.261-.13a1 1 0 0 1 .775-.05l.984.34c.078.028.16.044.243.054.784.093.855.377.694.801-.155.41-.616.617-1.035.487l-.01-.003C8.274 4.663 7.748 4.5 6 4.5 4.8 4.5 3.5 5.62 3.5 7c0 1.96.826 2.166 1.696 2.382.46.115.935.233 1.304.618.449.467.393 1.181.339 1.877C6.755 12.96 6.674 14 8.5 14c1.75 0 3-3.5 3-4.5 0-.262.208-.468.444-.7.396-.392.87-.86.556-1.8-.097-.291-.396-.568-.641-.756-.174-.133-.207-.396-.052-.551a.333.333 0 0 1 .42-.042l1.085.724c.11.072.255.058.348-.035.15-.15.415-.083.489.117.16.43.445 1.05.849 1.357L15 8A7 7 0 1 1 3.668 2.501Z" />
             </svg> My Geo</span>
+
           <div class="mt-3">
             <label for="latDegree" class="form-label" id="myLatLabel"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                 height="16" fill="currentColor" class="bi bi-pin-map-fill" viewBox="0 0 16 16">
@@ -41398,7 +41413,7 @@
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                 <path
                   d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-              </svg> Fuel Consuption</span>
+              </svg> Main Consuption</span>
           </div>
           <div class="mb-3" style="display: none;">
             <label for="conHsfoZeroFive" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -41437,6 +41452,21 @@
               </svg> HSMGO (>0.10% S)</label>
             <input type="text" class="form-control" id="conHsMgo" placeholder="XX.X">
           </div>
+
+
+          <div class="mb-3">
+            <label for="conUrea" class="form-label">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-radioactive" viewBox="0 0 16 16">
+                  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/>
+  <path d="M9.653 5.496A3 3 0 0 0 8 5c-.61 0-1.179.183-1.653.496L4.694 2.992A5.97 5.97 0 0 1 8 2c1.222 0 2.358.365 3.306.992zm1.342 2.324a3 3 0 0 1-.884 2.312 3 3 0 0 1-.769.552l1.342 2.683c.57-.286 1.09-.66 1.538-1.103a6 6 0 0 0 1.767-4.624zm-5.679 5.548 1.342-2.684A3 3 0 0 1 5.005 7.82l-2.994-.18a6 6 0 0 0 3.306 5.728ZM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+</svg> Consumtion UREA in kg</label>
+            <input type="text" class="form-control" id="conUrea" placeholder="XX in kg">
+          </div>
+
+          
+
+
+
           <div class="mb-3">
             <label for="conLsMgo" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-fuel-pump-diesel" viewBox="0 0 16 16">
@@ -41444,9 +41474,21 @@
                   d="M3.5 2a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5h-5ZM4 14V9h1.796c.5 0 .913.098 1.237.293.325.195.567.479.725.85.161.371.242.82.242 1.344 0 .528-.08.98-.242 1.355a1.805 1.805 0 0 1-.732.861c-.324.198-.734.297-1.23.297H4Zm1.666-4.194h-.692v3.385h.692c.229 0 .427-.035.595-.103a.986.986 0 0 0 .412-.315c.108-.142.188-.318.241-.528.056-.21.083-.456.083-.74 0-.376-.048-.69-.144-.94a1.11 1.11 0 0 0-.436-.569c-.195-.127-.445-.19-.75-.19Z" />
                 <path
                   d="M3 0a2 2 0 0 0-2 2v13H.5a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1H11v-4a1 1 0 0 1 1 1v.5a1.5 1.5 0 0 0 3 0V8h.5a.5.5 0 0 0 .5-.5V4.324c0-.616 0-1.426-.294-2.081a1.969 1.969 0 0 0-.794-.907C14.534 1.111 14.064 1 13.5 1a.5.5 0 0 0 0 1c.436 0 .716.086.9.195a.97.97 0 0 1 .394.458c.147.328.19.746.201 1.222H13.5a.5.5 0 0 0-.5.5V7.5a.5.5 0 0 0 .5.5h.5v4.5a.5.5 0 0 1-1 0V12a2 2 0 0 0-2-2V2a2 2 0 0 0-2-2H3Zm7 2v13H2V2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1Z" />
-              </svg> LSMGO (0.10% SMax)</label>
+              </svg> Consumtion LSMGO (0.10% SMax)</label>
             <input type="text" class="form-control" id="conLsMgo" placeholder="XX.X">
           </div>
+
+<div class="mb-3">
+            <label for="conFreshWater" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" class="bi bi-droplet" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                  d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z" />
+                <path fill-rule="evenodd"
+                  d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z" />
+              </svg> Consumtion Fresh Water in mt</label>
+            <input type="text" class="form-control" id="conFreshWater" placeholder="XX">
+          </div>
+
           <div class="mb-3" style="display: none">
             <span class="badge rounded-pill text-bg-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16"
                 height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
@@ -41511,6 +41553,17 @@
               </svg> LSMGO (0.10% SMax)</label>
             <input type="text" class="form-control" id="lsMgo" placeholder="XX.X">
           </div>
+
+<div class="mb-3">
+            <label for="robUrea" class="form-label">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-radioactive" viewBox="0 0 16 16">
+                  <path d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8"/>
+  <path d="M9.653 5.496A3 3 0 0 0 8 5c-.61 0-1.179.183-1.653.496L4.694 2.992A5.97 5.97 0 0 1 8 2c1.222 0 2.358.365 3.306.992zm1.342 2.324a3 3 0 0 1-.884 2.312 3 3 0 0 1-.769.552l1.342 2.683c.57-.286 1.09-.66 1.538-1.103a6 6 0 0 0 1.767-4.624zm-5.679 5.548 1.342-2.684A3 3 0 0 1 5.005 7.82l-2.994-.18a6 6 0 0 0 3.306 5.728ZM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+</svg> ROB UREA in kg</label>
+            <input type="text" class="form-control" id="robUrea" placeholder="XX in kg">
+          </div>
+
+
           </p>
           <div class="mb-3" style="display: none;">
             <span class="badge rounded-pill text-bg-primary" style="
@@ -41660,16 +41713,7 @@
               </svg> ROB Fresh Water in mt</label>
             <input type="text" class="form-control" id="robFreshWater" placeholder="XX">
           </div>
-          <div class="mb-3">
-            <label for="conFreshWater" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-                fill="currentColor" class="bi bi-droplet" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M7.21.8C7.69.295 8 0 8 0c.109.363.234.708.371 1.038.812 1.946 2.073 3.35 3.197 4.6C12.878 7.096 14 8.345 14 10a6 6 0 0 1-12 0C2 6.668 5.58 2.517 7.21.8zm.413 1.021A31.25 31.25 0 0 0 5.794 3.99c-.726.95-1.436 2.008-1.96 3.07C3.304 8.133 3 9.138 3 10a5 5 0 0 0 10 0c0-1.201-.796-2.157-2.181-3.7l-.03-.032C9.75 5.11 8.5 3.72 7.623 1.82z" />
-                <path fill-rule="evenodd"
-                  d="M4.553 7.776c.82-1.641 1.717-2.753 2.093-3.13l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448z" />
-              </svg> Consumtion Fresh Water in mt</label>
-            <input type="text" class="form-control" id="conFreshWater" placeholder="XX">
-          </div>
+          
           <div class="mb-3">
             <label for="robSludge" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-droplet-half" viewBox="0 0 16 16">
@@ -41693,7 +41737,7 @@
                 fill="currentColor" class="bi bi-droplet-fill" viewBox="0 0 16 16">
                 <path
                   d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z" />
-              </svg> ROB ME circulating Oil in kg</label>
+              </svg> ROB ME circulating Oil in ltr</label>
             <input type="text" class="form-control" id="robMeCircOil" placeholder="XX">
           </div>
           <div class="mb-3" style="display:none;">
@@ -43112,6 +43156,10 @@
     /*varscope*/
     /*variables for field start*/
     let varVesselImoSelector;
+    let varMsgToAllParty;
+    let varEmail;
+    let varVesselId;
+    let varSpreadSheetIdReporting;
     let varVesselImoSelectorText;
     let varDateOfReport;
     let varTimeInUtc;
@@ -43142,6 +43190,8 @@
     let varConVlsfoZeroFive;
     let varConUlsfoZeroOne;
     let varConHsMgo;
+    let varConUrea;
+    let varRobUrea;
     let varConLsMgo;
     let varHsfoZeroFive;
     let varVlsfoZeroFive;
@@ -43299,6 +43349,7 @@
     let arrWithVariables;
     let arrWithElementNames = [
       "vesselImoSelector",
+      "msgToAllParty",
       "dateOfReport",
       "timeInUtc",
       "shipTimeInUtcPlusOrMinus",
@@ -43326,6 +43377,8 @@
       "conVlsfoZeroFive",
       "conUlsfoZeroOne",
       "conHsMgo",
+      "conUrea",
+      "robUrea",
       "conLsMgo",
       "hsfoZeroFive",
       "vlsfoZeroFive",
@@ -43483,6 +43536,7 @@
     let arrWithCompanyElementNames = [
       "vesselImoSelector",
       "dateOfReport",
+      "msgToAllParty",
       "timeInUtc",
       "shipTimeInUtcPlusOrMinus",
       "voyageNumber",
@@ -43530,7 +43584,10 @@
       "dischSludge",
       "dischGarbage",
       "captainInitials"
-    ]
+    ];
+
+
+
 
     /*variables for field end*/
     var oneWindow = document.getElementById("myWindowOne");
@@ -43542,6 +43599,8 @@
 
   if (!userData) {
     console.log("No userData found in sessionStorage.");
+
+
     return;
   }
 
@@ -43609,6 +43668,27 @@ function runAfterSuccess(m){
   moveSessionUserDataToLocalStorage()
   populateFirstOptionFromLocalStorage()
   functionUploadToField()
+
+  const myData = sessionStorage.getItem("userData");
+const myDataObject = JSON.parse(myData);
+varEmail = myDataObject.email;
+varVesselId = myDataObject.vesselId;
+varSpreadSheetIdReporting = myDataObject.spreadSheetIdReporting;
+
+
+ 
+
+
+const reportLink = document.getElementById("report-link");
+  const newId = myDataObject.spreadSheetIdReporting; // Replace with your new ID
+
+  if (reportLink) {
+    reportLink.href = "https://docs.google.com/spreadsheets/d/" + newId;
+    console.log("Updated href:", reportLink.href);
+  } else {
+    console.error("Link element not found");
+  }
+
 }
     window.onload = function () { showWindowOne(); 
 
@@ -43617,6 +43697,7 @@ function runAfterSuccess(m){
 
   if (!userDataRaw) {
     console.warn("No userData found in sessionStorage.");
+    window.location.href = "http://reporting.shipsnavo.de/daily/login.html";
     return;
   }
 
@@ -43739,6 +43820,7 @@ function runAfterSuccess(m){
     function dataFromFieldToVariables() {
       varVesselImoSelector = document.getElementById("vesselImoSelector").value;
       varDateOfReport = document.getElementById("dateOfReport").value;
+      varMsgToAllParty = document.getElementById("msgToAllParty").value;
       varTimeInUtc = document.getElementById("timeInUtc").value;
       varShipTimeInUtcPlusOrMinus = document.getElementById("shipTimeInUtcPlusOrMinus").value;
       varvoyageNumber = document.getElementById("voyageNumber").value;
@@ -43765,6 +43847,8 @@ function runAfterSuccess(m){
       varConVlsfoZeroFive = document.getElementById("conVlsfoZeroFive").value;
       varConUlsfoZeroOne = document.getElementById("conUlsfoZeroOne").value;
       varConHsMgo = document.getElementById("conHsMgo").value;
+      varConUrea = document.getElementById("conUrea").value;
+      varRobUrea = document.getElementById("robUrea").value;
       varConLsMgo = document.getElementById("conLsMgo").value;
       varHsfoZeroFive = document.getElementById("hsfoZeroFive").value;
       varVlsfoZeroFive = document.getElementById("vlsfoZeroFive").value;
@@ -43921,6 +44005,7 @@ function runAfterSuccess(m){
 
       arrWithVariables = [
         varVesselImoSelector,
+        varMsgToAllParty,
         varDateOfReport,
         varTimeInUtc,
         varShipTimeInUtcPlusOrMinus,
@@ -43948,6 +44033,8 @@ function runAfterSuccess(m){
         varConVlsfoZeroFive,
         varConUlsfoZeroOne,
         varConHsMgo,
+        varConUrea,
+        varRobUrea,
         varConLsMgo,
         varHsfoZeroFive,
         varVlsfoZeroFive,
@@ -44164,6 +44251,10 @@ function runAfterSuccess(m){
 
       var formData = {
         vesselImoSelector: varVesselImoSelectorText,
+        email: varEmail,
+        spreadSheetIdReporting:varSpreadSheetIdReporting,
+        vesselId : varVesselId,
+        msgToAllParty : varMsgToAllParty,
         VesselImoSelectorUnderScore: varVesselImoSelectorTextUnderScore,
         dateOfReport: varDateOfReport,
         timeInUtc: varTimeInUtc,
@@ -44192,6 +44283,8 @@ function runAfterSuccess(m){
         conVlsfoZeroFive: varConVlsfoZeroFive,
         conUlsfoZeroOne: varConUlsfoZeroOne,
         conHsMgo: varConHsMgo,
+        conUrea: varConUrea,
+        robUrea: varRobUrea,
         conLsMgo: varConLsMgo,
         hsfoZeroFive: varHsfoZeroFive,
         vlsfoZeroFive: varVlsfoZeroFive,
@@ -44352,22 +44445,22 @@ function runAfterSuccess(m){
 
 
 
-      $.ajax({
-        type: "GET",
-        url: "https://script.google.com/macros/s/AKfycbyOWaHjj6MahClWUhXkQAKUMYEV3oJh2y4dihahUp86iFyVK-1rwy-d7ooLGLNHUEKN/exec",
-        data: formData,
-        dataType: "json",
-        encode: true,
-      }).done(function (data
-      ) {
-        // console.log(data);
-        // var s=  document.getElementById('labelRecepient');
-        // Modal window get a message with red typing how many row added in gsheet
-        dataMy = data.result;
-        rowMy = data.row;
-        // s.style.color = "red" ;
-        // s.innerHTML = 'Success Upload to Server Row No. '+rowMy+' added';
-      })
+$.ajax({
+  type: "POST",
+  url: "https://script.google.com/macros/s/AKfycbyhHfSSmAYoPHTWG49pq3VSLVux_9Ya4wpwzKW6iTNlplJFyc7k_AdfbdEUiBheKke50A/exec",
+  data: JSON.stringify(formData),
+                 // tells jQuery to expect JSON in response
+  success: function(data) {
+    // handle success
+    console.log("Success:", data);
+    dataMy = data.result;
+    rowMy = data.row;
+  },
+  error: function(xhr, status, error) {
+    // handle error
+    console.error("Error:", xhr.responseText);
+  }
+});
 
 
 
