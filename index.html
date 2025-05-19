@@ -41125,6 +41125,46 @@
           </li>
 
 
+<!-- Modal -->
+<div class="modal fade" id="saveModal" tabindex="-1" aria-labelledby="saveModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-success">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title d-flex align-items-center gap-2" id="saveModalLabel">
+          <i class="bi bi-check-circle-fill"></i> ✅ Success
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center fs-5">
+        🎉 Data has been saved on the server successfully!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+   <li class="nav-item">
+  <a id="report-link" class="nav-link" href="#" onclick="chiefEngSave()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
+      <path d="M11 2H9v3h2z"/>
+      <path d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z"/>
+    </svg>
+    SERVER SAVE
+  </a>
+</li>
+
+<!-- Spinner placed outside the <a> -->
+<div id="bootloader" class="d-none text-center mt-2">
+  <div class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
           
 
          
@@ -43653,14 +43693,33 @@
 
   console.log("All userData values moved from sessionStorage to individual localStorage keys.");
 }
+
+function chiefEngSave() {
+
+startBootloader();
+functionSaveToLocalStorage();
+
+sendLocalStorageDataToApi(closeBootloaderAndNotify);
+
+}
+
+function startBootloader() {
+    document.getElementById('bootloader').classList.remove('d-none');
+  }
+
+function closeBootloaderAndNotify() {
+    document.getElementById('bootloader').classList.add('d-none');
+    const modal = new bootstrap.Modal(document.getElementById('saveModal'));
+    modal.show();
+  }
+
+
 /**
  * Function to send data from localStorage to the embedded API endpoint
  */
-function sendLocalStorageDataToApi() {
-  // The API endpoint URL (embedded inside the function)
+function sendLocalStorageDataToApi(p) {
   const apiEndpoint = 'https://script.google.com/macros/s/AKfycbz-hiAmmw3lFmj0Ud2mT1jNhojvX9hZAJmliM7YhCzgHSVS7-vYrQWEfBvQap9TuyhAZQ/exec';
 
-  // Retrieve data from localStorage and store it in an object
   let localStorageData = {};
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
@@ -43668,29 +43727,30 @@ function sendLocalStorageDataToApi() {
     localStorageData[key] = value;
   }
 
-  // Prepare the request options
   const requestOptions = {
-    method: 'POST',  // Use 'POST' to send data
-    
-    body: JSON.stringify(localStorageData),  // Convert the object to a JSON string
+    method: 'POST',
+    body: JSON.stringify(localStorageData),
   };
 
-  // Send the POST request to the API
   fetch(apiEndpoint, requestOptions)
     .then(response => {
       if (!response.ok) {
-        // If the response is not successful, throw an error
         throw new Error('Network response was not ok');
       }
-      return response.json();  // Parse the JSON response from the API
+      return response.json();
     })
     .then(data => {
-      console.log('Data successfully sent:', data);  // Log the success response
+      console.log('Data successfully sent:', data);
+
+      // If `p` is a function, call it
+      if (typeof p === 'function') {
+        p(data); // optionally pass the returned data to the callback
+      }
     })
     .catch(error => {
-      console.error('Error:', error);  // Log any errors (e.g., network issues, server errors)
+      console.error('Error:', error);
     });
-};
+}
 
 function populateFirstOptionFromLocalStorage() {
     const storedValue = localStorage.getItem('name'); // Retrieve value from localStorage
