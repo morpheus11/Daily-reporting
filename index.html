@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style type="text/css">
     @charset "UTF-8";
 
@@ -41154,6 +41155,43 @@
   <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
   <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5M3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6m0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
 </svg> Message </span>
+
+        
+  <div class="mb-3">
+            <label for="email" class="form-label">
+              			<!-- Help Icon (Bootstrap Icon) -->
+<i class="bi bi-question-circle-fill text-primary" 
+   role="button" 
+   data-bs-toggle="modal" 
+   data-bs-target="#helpModal" 
+   style="font-size: 1.3rem; cursor: pointer;"
+   title="Help">
+</i>
+
+<!-- Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helpModalLabel">Explanation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        If you need add additional email for notify agent please use this field, for example:</br>
+        1.)agentUSA@usa.com </br>
+        2.)agentUSA@usa.com, agentUK@UK.com
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+              Email addresses</label>
+            <textarea class="form-control" id="email" placeholder="emai@email.de" rows="1"></textarea>
+            
+          </div>
+
  <div class="mb-3">
             <label for="msgToAllParty" class="form-label">Msg to all party</label>
             <textarea class="form-control" id="msgToAllParty" rows="4"></textarea>
@@ -41165,6 +41203,8 @@
               <path
                 d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM3.668 2.501l-.288.646a.847.847 0 0 0 1.479.815l.245-.368a.809.809 0 0 1 1.034-.275.809.809 0 0 0 .724 0l.261-.13a1 1 0 0 1 .775-.05l.984.34c.078.028.16.044.243.054.784.093.855.377.694.801-.155.41-.616.617-1.035.487l-.01-.003C8.274 4.663 7.748 4.5 6 4.5 4.8 4.5 3.5 5.62 3.5 7c0 1.96.826 2.166 1.696 2.382.46.115.935.233 1.304.618.449.467.393 1.181.339 1.877C6.755 12.96 6.674 14 8.5 14c1.75 0 3-3.5 3-4.5 0-.262.208-.468.444-.7.396-.392.87-.86.556-1.8-.097-.291-.396-.568-.641-.756-.174-.133-.207-.396-.052-.551a.333.333 0 0 1 .42-.042l1.085.724c.11.072.255.058.348-.035.15-.15.415-.083.489.117.16.43.445 1.05.849 1.357L15 8A7 7 0 1 1 3.668 2.501Z" />
             </svg> My Geo</span>
+			
+
 
           <div class="mt-3">
             <label for="latDegree" class="form-label" id="myLatLabel"><svg xmlns="http://www.w3.org/2000/svg" width="16"
@@ -43378,6 +43418,7 @@
       "conUlsfoZeroOne",
       "conHsMgo",
       "conUrea",
+      "email",
       "robUrea",
       "conLsMgo",
       "hsfoZeroFive",
@@ -43671,7 +43712,7 @@ function runAfterSuccess(m){
 
   const myData = sessionStorage.getItem("userData");
 const myDataObject = JSON.parse(myData);
-varEmail = myDataObject.email;
+
 varVesselId = myDataObject.vesselId;
 varSpreadSheetIdReporting = myDataObject.spreadSheetIdReporting;
 
@@ -43847,6 +43888,7 @@ const reportLink = document.getElementById("report-link");
       varConVlsfoZeroFive = document.getElementById("conVlsfoZeroFive").value;
       varConUlsfoZeroOne = document.getElementById("conUlsfoZeroOne").value;
       varConHsMgo = document.getElementById("conHsMgo").value;
+      varEmail = document.getElementById("email").value;
       varConUrea = document.getElementById("conUrea").value;
       varRobUrea = document.getElementById("robUrea").value;
       varConLsMgo = document.getElementById("conLsMgo").value;
@@ -44034,6 +44076,7 @@ const reportLink = document.getElementById("report-link");
         varConUlsfoZeroOne,
         varConHsMgo,
         varConUrea,
+        varEmail,
         varRobUrea,
         varConLsMgo,
         varHsfoZeroFive,
