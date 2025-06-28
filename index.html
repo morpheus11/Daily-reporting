@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
   <style type="text/css">
     @charset "UTF-8";
@@ -12638,6 +12639,79 @@
       .d-print-none {
         display: none !important
       }
+    }
+        body.report-uploader-body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .report-uploader-container {
+      margin:auto;
+    margin-bottom: 5px;
+      max-width: 600px;
+      width: 100%;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .report-uploader-dropzone {
+      border: 2px dashed #ccc;
+      padding: 50px;
+      text-align: center;
+      color: #888;
+      background: #fafafa;
+      border-radius: 12px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .report-uploader-dropzone.dragover {
+      background-color: #e8f5e9;
+      border-color: #4caf50;
+      color: #388e3c;
+    }
+
+    .report-uploader-file-list {
+      margin-top: 20px;
+      max-height: 200px;
+      overflow-y: auto;
+      background: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .report-uploader-file-list div {
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .report-uploader-btn {
+      margin-top: 25px;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .report-uploader-btn:hover {
+      background-color: #0056b3;
+    }
+
+    input[type="file"].report-uploader-input {
+      display: none;
     }
 
     /*# sourceMappingURL=bootstrap.min.css.map */
@@ -41669,7 +41743,7 @@
               <option value="2">Ballast</option>
             </select>
           </div>
-          <div class="mb-3" style="display: none;">
+          <div class="mb-3" style="display: block;">
             <label for="draftFwd" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
                 <path
@@ -41677,7 +41751,7 @@
               </svg> Draft fwd. in mt</label>
             <input type="text" class="form-control" id="draftFwd" placeholder="X.X">
           </div>
-          <div class="mb-3" style="display: none;">
+          <div class="mb-3" style="display: block;">
             <label for="draftAft" class="form-label"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                 fill="currentColor" class="bi bi-rulers" viewBox="0 0 16 16">
                 <path
@@ -42543,6 +42617,19 @@
             <input type="text" class="form-control" onfocusout="makeSave()" id="captainInitials"
               placeholder="Surname N.">
           </div>
+
+          <div class="mb-3">
+          <!-- ✅ START: Report Uploader Block -->
+<div class="report-uploader-container">
+  <div class="report-uploader-dropzone" id="dropzone">
+    Drag & Drop Files Here or Click to Browse
+    <input type="file" id="fileInput" class="report-uploader-input" multiple>
+  </div>
+  <div class="report-uploader-file-list" id="fileList"></div>
+</div>
+<!-- ✅ END: Report Uploader Block -->
+</div>
+
           <div class="mx-auto" style="width: fit-content;">
             <button class="btn btn-primary" onclick="ebaniCircle()" id="gSheet">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-google"
@@ -44294,6 +44381,9 @@ const reportLink = document.getElementById("report-link");
       ];
     };
 
+    
+
+
     function functionSaveToLocalStorage() {
       dataFromFieldToVariables();
       for (var i = 0; i < arrWithVariables.length; i++) {
@@ -44314,15 +44404,29 @@ const reportLink = document.getElementById("report-link");
 
     function makeSave() {
       $('#exampleModal').modal('show');
-    }
+    };
+
+       
+
+
+    var formData = {
+        
+        
+      };
+
+
+      const reportJson = {
+   
+    attachedFiles: []
+  };
+
     function ebaniCircle() {
       validateInputFields();
       $('#modalWindowWithCircleProgress').modal('show')
       functionSaveToLocalStorage();
       sendLocalStorageDataToApi();
       // data-bs-target= data-bs-toggle="modal" data-bs-dismiss="modal"
-
-      let selOne = document.getElementById("vesselImoSelector");
+ let selOne = document.getElementById("vesselImoSelector");
       varVesselImoSelectorText = selOne.options[selOne.selectedIndex].text;
 
       /*regex for send ships name like COE_LUISA START*/
@@ -44351,200 +44455,201 @@ const reportLink = document.getElementById("report-link");
 
       let selFour = document.getElementById("vesselCondition");
       varVesselConditionText = selFour.options[selFour.selectedIndex].text;
-
-      var formData = {
-        vesselImoSelector: varVesselImoSelectorText,
-        email: varEmail,
-        spreadSheetIdReporting:varSpreadSheetIdReporting,
-        vesselId : varVesselId,
-        msgToAllParty : varMsgToAllParty,
-        VesselImoSelectorUnderScore: varVesselImoSelectorTextUnderScore,
-        dateOfReport: varDateOfReport,
-        timeInUtc: varTimeInUtc,
-        shipTimeInUtcPlusOrMinus: varShipTimeInUtcPlusOrMinus,
-        voyageNumber: varvoyageNumber,
-        distanceBetweenPoCs: vardistanceBetweenPoCs,
-        fromPort: varfromPort,
-        steamTimeBetweenPoCs: varsteamTimeBetweenPoCs,
-        speedOverGround: varSpeedOverGround,
-        heading: varHeading,
-        distanceToGo: varDistanceToGo,
-        latDegree: varLatDegree,
-        latMinutes: varLatMinutes,
-        latCardinalPoints: varLatCardinalPointsText,
-        lonDegree: varLonDegree,
-        lonMinutes: varLonMinutes,
-        lonCardinalPoints: varLonCardinalPointsText,
-        toPort: vartoPort,
-        idleDriftTime: varIdleDriftTime,
-        cargoQty: varCargoQty,
-        ballastQty: varBallastQty,
-        gM: varGM,
-        dangerousCargo: varDangerousCargo,
-        teuCargo: varTeuCargo,
-        conHsfoZeroFive: varConHsfoZeroFive,
-        conVlsfoZeroFive: varConVlsfoZeroFive,
-        conUlsfoZeroOne: varConUlsfoZeroOne,
-        conHsMgo: varConHsMgo,
-        conUrea: varConUrea,
-        robUrea: varRobUrea,
-        conLsMgo: varConLsMgo,
-        hsfoZeroFive: varHsfoZeroFive,
-        vlsfoZeroFive: varVlsfoZeroFive,
-        ulsfoZeroOne: varUlsfoZeroOne,
-        hsMgo: varHsMgo,
-        lsMgo: varLsMgo,
-        vesselCondition: varVesselConditionText,
-        draftFwd: varDraftFwd,
-        draftAft: varDraftAft,
-        beaufortScale: varBeaufortScale,
-        windDirection: varWindDirection,
-        waveHeight: varWaveHeight,
-        waveDirection: varWaveDirection,
-        swellHeight: varSwellHeight,
-        swellDirection: varSwellDirection,
-        currentSpeed: varCurrentSpeed,
-        currentDirection: varCurrentDirection,
-        robFreshWater: varRobFreshWater,
-        conFreshWater: varConFreshWater,
-        robSludge: varRobSludge,
-        robAeCircOil: varRobAeCircOil,
-        robMeCircOil: varRobMeCircOil,
-        robCylinderCircOil: varRobCylinderCircOil,
-        meRpm: varMeRpm,
-        slipInPct: varSlipInPct,
-        meFuelRack: varMeFuelRack,
-        averageMePower: varAverageMePower,
-        meTc1Rpm: varMeTc1Rpm,
-        meTc2Rpm: varMeTc2Rpm,
-        meTc3Rpm: varMeTc3Rpm,
-        scavEngeAir: varScavEngeAir,
-        auxEnginesInUse: varAuxEnginesInUse,
-        auxCirculationOilConsumption: varAuxCirculationOilConsumption,
-        mECylinderOilConsuption: varMECylinderOilConsuption,
-        revsCountSeaPassage: varRevsCountSeaPassage,
-        loadOfMCR: varLoadOfMCR,
-        loadIndicator: varLoadIndicator,
-        hoursMEOn75MCRH: varHoursMEOn75MCRH,
-        exhaustGasTempAverageDegc: varExhaustGasTempAverageDegc,
-        exhaustGasTempMaxDegc: varExhaustGasTempMaxDegc,
-        mEUnitWithHighestExhTemp: varMEUnitWithHighestExhTemp,
-        tCForeRPMMin: varTCForeRPMMin,
-        tCAftRPM1Min: varTCAftRPM1Min,
-        scavAirTempReceiverDegc: varScavAirTempReceiverDegc,
-        airCoolerForeDiffPressureMmh: varAirCoolerForeDiffPressureMmh,
-        fOViscosityAtDegcCst: varFOViscosityAtDegcCst,
-        sWTemperatureDegc: varSWTemperatureDegc,
-        eRTempDegc: varERTempDegc,
-        shaftGenAveragePowerKw: varShaftGenAveragePowerKw,
-        specificFOConsumptionGKwh: varSpecificFOConsumptionGKwh,
-        cylOilHiConsumptionLtrs: varCylOilHiConsumptionLtrs,
-        cylOilLoConsumptionLtrs: varCylOilLoConsumptionLtrs,
-        circOilAddedToSumpTankLtrs: varCircOilAddedToSumpTankLtrs,
-        aux1AveragePower: varAux1AveragePower,
-        aux1AECircOilTopUp: varAux1AECircOilTopUp,
-        aux1AECircOilTopReplaced: varAux1AECircOilTopReplaced,
-        aux1SumpTankLOPurifedFor: varAux1SumpTankLOPurifedFor,
-        aux2AveragePower: varAux2AveragePower,
-        aux2AECircOilTopUp: varAux2AECircOilTopUp,
-        aux2AECircOilTopReplaced: varAux2AECircOilTopReplaced,
-        aux2SumpTankLOPurifedFor: varAux2SumpTankLOPurifedFor,
-        aux3AveragePower: varAux3AveragePower,
-        aux3AECircOilTopUp: varAux3AECircOilTopUp,
-        aux3AECircOilTopReplaced: varAux3AECircOilTopReplaced,
-        aux3SumpTankLOPurifedFor: varAux3SumpTankLOPurifedFor,
-        aux4AveragePower: varAux4AveragePower,
-        aux4AECircOilTopUp: varAux4AECircOilTopUp,
-        aux4AECircOilTopReplaced: varAux4AECircOilTopReplaced,
-        aux4SumpTankLOPurifedFor: varAux4SumpTankLOPurifedFor,
-        auxilincineratorMDOMGOhi: varAuxilincineratorMDOMGOhi,
-        AuxildgFOSpecConsumption: varAuxildgFOSpecConsumption,
-        AuxilfreshWaterProduced: varAuxilfreshWaterProduced,
-        robMESumpTankContents: varRobMESumpTankContents,
-        robHFOInUseSuphurContent: varRobHFOInUseSuphurContent,
-        robVLSFOInUseSuphurContent: varRobVLSFOInUseSuphurContent,
-        robULSFOInUseSuphurContent: varRobULSFOInUseSuphurContent,
-        robMGOInUseSuphurContent: varRobMGOInUseSuphurContent,
-        robMGOLSInUseSuphurContent: varRobMGOLSInUseSuphurContent,
-        robBilgeWater: varRobBilgeWater,
-        loConsumptionSternTube: varLoConsumptionSternTube,
-        loConsumptionCPP: varLoConsumptionCPP,
-        loConsumptionReductionGearbox: varLoConsumptionReductionGearbox,
-        loConsumptionAirCompressors: varLoConsumptionAirCompressors,
-        loConsumptionBowthruster: varLoConsumptionBowthruster,
-        loConsumptionHatchCover: varLoConsumptionHatchCover,
-        comAuthor: varComAuthor,
-        comAlarmCodes: varComAlarmCodes,
-        comAlarmComments: varComAlarmComments,
-        rcvdCylOilHi: varRcvdCylOilHi,
-        rcvdCylOilLo: varRcvdCylOilLo,
-        rcvdMeCircOil: varRcvdMeCircOil,
-        rcvdAeCircOil: varRcvdAeCircOil,
-        rcvdHsfo: varRcvdHsfo,
-        rcvdUlsfo: varRcvdUlsfo,
-        rcvdVlsfo: varRcvdVlsfo,
-        rcvdHsmdoMgo: varRcvdHsmdoMgo,
-        rcvdLsmdoMgo: varRcvdLsmdoMgo,
-        rcvdFw: varRcvdFw,
-        dischHfo: varDischHfo,
-        dischHfoUls: varDischHfoUls,
-        dischBilgeWater: varDischBilgeWater,
-        dischSludge: varDischSludge,
-        dischGarbage: varDischGarbage,
-        appMeTcOneTempIn: varAppMeTcOneTempIn,
-        appMeTcOneTempOut: varAppMeTcOneTempOut,
-        appMeTcTwoTempIn: varAppMeTcTwoTempIn,
-        appMeTcTwoTempOut: varAppMeTcTwoTempOut,
-        appFoTempAtMeInlet: varAppFoTempAtMeInlet,
-        appLoTempAtMeInlet: varAppLoTempAtMeInlet,
-        appPistonCoolingLoPress: varAppPistonCoolingLoPress,
-        appPistonCoolingAverageTempOut: varAppPistonCoolingAverageTempOut,
-        appPistonCoolingMaxTempOut: varAppPistonCoolingMaxTempOut,
-        appUnitWithHighestPistonCoolingTemp: varAppUnitWithHighestPistonCoolingTemp,
-        appPistonUndersideAverageTemp: varAppPistonUndersideAverageTemp,
-        appPistonUndersideHighestTemp: varAppPistonUndersideHighestTemp,
-        appUnitWithHighestPistonUndersideTemp: varAppUnitWithHighestPistonUndersideTemp,
-        appMeCoolingWaterPressure: varAppMeCoolingWaterPressure,
-        appMeCoolingWaterAverageTemp: varAppMeCoolingWaterAverageTemp,
-        appMeCoolingWaterHighestTemp: varAppMeCoolingWaterHighestTemp,
-        appUnitWithHighestCoolingWaterTemp: varAppUnitWithHighestCoolingWaterTemp,
-        appThermoOilTemp: varAppThermoOilTemp,
-        appMeHfoFilterBackflush: varAppMeHfoFilterBackflush,
-        appMeLoFilterBackflush: varAppMeLoFilterBackflush,
-        appMeServoOilFilterBackflush: varAppMeServoOilFilterBackflush,
-        runhrsMaineEngine: varRunhrsMaineEngine,
-        runhrsAeOne: varRunhrsAeOne,
-        runhrsAeTwo: varRunhrsAeTwo,
-        runhrsAeThree: varRunhrsAeThree,
-        runhrsAeFour: varRunhrsAeFour,
-        runhrsEmcyGe: varRunhrsEmcyGe,
-        runhrsBoilerBurner: varRunhrsBoilerBurner,
-        runhrsShaftGenerator: varRunhrsShaftGenerator,
-        runhrsAirCompressorOne: varRunhrsAirCompressorOne,
-        runhrsAirCompressorTwo: varRunhrsAirCompressorTwo,
-        runhrsAirCompressorThree: varRunhrsAirCompressorThree,
-        runhrsAirCompressorFour: varRunhrsAirCompressorFour,
-        runhrsHfoPurifierOne: varRunhrsHfoPurifierOne,
-        runhrsHfoPurifierTwo: varRunhrsHfoPurifierTwo,
-        runhrsMdoPurifier: varRunhrsMdoPurifier,
-        runhrsMeLoPurifierOne: varRunhrsMeLoPurifierOne,
-        runhrsMeLoPurifierTwo: varRunhrsMeLoPurifierTwo,
-        runhrsGeLoPurifierOne: varRunhrsGeLoPurifierOne,
-        runhrsGeLoPurifierTwo: varRunhrsGeLoPurifierTwo,
-        runhrsProvRefPlantOne: varRunhrsProvRefPlantOne,
-        runhrsProvRefPlantTwo: varRunhrsProvRefPlantTwo,
-        runhrsFwg: varRunhrsFwg,
-        runhrsIncinerator: varRunhrsIncinerator,
-        runhrsCraneOne: varRunhrsCraneOne,
-        runhrsCraneTwo: varRunhrsCraneTwo,
-        runhrsCraneThree: varRunhrsCraneThree,
-        runhrsCraneFour: varRunhrsCraneFour,
-        runhrsCraneFive: varRunhrsCraneFive,
-        captainInitials: varCaptainInitials,
-      };
+  
+      
       //variables for getting result from gsheet script, success or no and number of the row added
       var dataMy;
       var rowMy;
+        formData.attachedFiles= reportJson.attachedFiles;
+        formData.vesselImoSelector= varVesselImoSelectorText;
+        formData.email= varEmail;
+        formData.spreadSheetIdReporting=varSpreadSheetIdReporting;
+        formData.vesselId = varVesselId;
+        formData.msgToAllParty = varMsgToAllParty;
+        formData.VesselImoSelectorUnderScore= varVesselImoSelectorTextUnderScore;
+        formData.dateOfReport= varDateOfReport;
+        formData.timeInUtc= varTimeInUtc;
+        formData.shipTimeInUtcPlusOrMinus= varShipTimeInUtcPlusOrMinus;
+        formData.voyageNumber= varvoyageNumber;
+        formData.distanceBetweenPoCs= vardistanceBetweenPoCs;
+        formData.fromPort= varfromPort;
+        formData.steamTimeBetweenPoCs= varsteamTimeBetweenPoCs;
+        formData.speedOverGround= varSpeedOverGround;
+        formData.heading= varHeading;
+        formData.distanceToGo= varDistanceToGo;
+        formData.latDegree= varLatDegree;
+        formData.latMinutes= varLatMinutes;
+        formData.latCardinalPoints= varLatCardinalPointsText;
+        formData.lonDegree= varLonDegree;
+        formData.lonMinutes= varLonMinutes;
+        formData.lonCardinalPoints= varLonCardinalPointsText;
+        formData.toPort= vartoPort;
+        formData.idleDriftTime= varIdleDriftTime;
+        formData.cargoQty= varCargoQty;
+        formData.ballastQty= varBallastQty;
+        formData.gM= varGM;
+        formData.dangerousCargo= varDangerousCargo;
+        formData.teuCargo= varTeuCargo;
+        formData.conHsfoZeroFive= varConHsfoZeroFive;
+        formData.conVlsfoZeroFive= varConVlsfoZeroFive;
+        formData.conUlsfoZeroOne= varConUlsfoZeroOne;
+        formData.conHsMgo= varConHsMgo;
+        formData.conUrea= varConUrea;
+        formData.robUrea= varRobUrea;
+        formData.conLsMgo= varConLsMgo;
+        formData.hsfoZeroFive= varHsfoZeroFive;
+        formData.vlsfoZeroFive= varVlsfoZeroFive;
+        formData.ulsfoZeroOne= varUlsfoZeroOne;
+        formData.hsMgo= varHsMgo;
+        formData.lsMgo= varLsMgo;
+        formData.vesselCondition= varVesselConditionText;
+        formData.draftFwd= varDraftFwd;
+        formData.draftAft= varDraftAft;
+        formData.beaufortScale= varBeaufortScale;
+        formData.windDirection= varWindDirection;
+        formData.waveHeight= varWaveHeight;
+        formData.waveDirection= varWaveDirection;
+        formData.swellHeight= varSwellHeight;
+        formData.swellDirection= varSwellDirection;
+        formData.currentSpeed= varCurrentSpeed;
+        formData.currentDirection= varCurrentDirection;
+        formData.robFreshWater= varRobFreshWater;
+        formData.conFreshWater= varConFreshWater;
+        formData.robSludge= varRobSludge;
+        formData.robAeCircOil= varRobAeCircOil;
+        formData.robMeCircOil= varRobMeCircOil;
+        formData.robCylinderCircOil= varRobCylinderCircOil;
+        formData.meRpm= varMeRpm;
+        formData.slipInPct= varSlipInPct;
+        formData.meFuelRack= varMeFuelRack;
+        formData.averageMePower= varAverageMePower;
+        formData.meTc1Rpm= varMeTc1Rpm;
+        formData.meTc2Rpm= varMeTc2Rpm;
+        formData.meTc3Rpm= varMeTc3Rpm;
+        formData.scavEngeAir= varScavEngeAir;
+        formData.auxEnginesInUse= varAuxEnginesInUse;
+        formData.auxCirculationOilConsumption= varAuxCirculationOilConsumption;
+        formData.mECylinderOilConsuption= varMECylinderOilConsuption;
+        formData.revsCountSeaPassage= varRevsCountSeaPassage;
+        formData.loadOfMCR= varLoadOfMCR;
+        formData.loadIndicator= varLoadIndicator;
+        formData.hoursMEOn75MCRH= varHoursMEOn75MCRH;
+        formData.exhaustGasTempAverageDegc= varExhaustGasTempAverageDegc;
+        formData.exhaustGasTempMaxDegc= varExhaustGasTempMaxDegc;
+        formData.mEUnitWithHighestExhTemp= varMEUnitWithHighestExhTemp;
+        formData.tCForeRPMMin= varTCForeRPMMin;
+        formData.tCAftRPM1Min= varTCAftRPM1Min;
+        formData.scavAirTempReceiverDegc= varScavAirTempReceiverDegc;
+        formData.airCoolerForeDiffPressureMmh= varAirCoolerForeDiffPressureMmh;
+        formData.fOViscosityAtDegcCst= varFOViscosityAtDegcCst;
+        formData.sWTemperatureDegc= varSWTemperatureDegc;
+        formData.eRTempDegc= varERTempDegc;
+        formData.shaftGenAveragePowerKw= varShaftGenAveragePowerKw;
+        formData.specificFOConsumptionGKwh= varSpecificFOConsumptionGKwh;
+        formData.cylOilHiConsumptionLtrs= varCylOilHiConsumptionLtrs;
+        formData.cylOilLoConsumptionLtrs= varCylOilLoConsumptionLtrs;
+        formData.circOilAddedToSumpTankLtrs= varCircOilAddedToSumpTankLtrs;
+        formData.aux1AveragePower= varAux1AveragePower;
+        formData.aux1AECircOilTopUp= varAux1AECircOilTopUp;
+        formData.aux1AECircOilTopReplaced= varAux1AECircOilTopReplaced;
+        formData.aux1SumpTankLOPurifedFor= varAux1SumpTankLOPurifedFor;
+        formData.aux2AveragePower= varAux2AveragePower;
+        formData.aux2AECircOilTopUp= varAux2AECircOilTopUp;
+        formData.aux2AECircOilTopReplaced= varAux2AECircOilTopReplaced;
+        formData.aux2SumpTankLOPurifedFor= varAux2SumpTankLOPurifedFor;
+        formData.aux3AveragePower= varAux3AveragePower;
+        formData.aux3AECircOilTopUp= varAux3AECircOilTopUp;
+        formData.aux3AECircOilTopReplaced= varAux3AECircOilTopReplaced;
+        formData.aux3SumpTankLOPurifedFor= varAux3SumpTankLOPurifedFor;
+        formData.aux4AveragePower= varAux4AveragePower;
+        formData.aux4AECircOilTopUp= varAux4AECircOilTopUp;
+        formData.aux4AECircOilTopReplaced= varAux4AECircOilTopReplaced;
+        formData.aux4SumpTankLOPurifedFor= varAux4SumpTankLOPurifedFor;
+        formData.auxilincineratorMDOMGOhi= varAuxilincineratorMDOMGOhi;
+        formData.AuxildgFOSpecConsumption= varAuxildgFOSpecConsumption;
+        formData.AuxilfreshWaterProduced= varAuxilfreshWaterProduced;
+        formData.robMESumpTankContents= varRobMESumpTankContents;
+        formData.robHFOInUseSuphurContent= varRobHFOInUseSuphurContent;
+        formData.robVLSFOInUseSuphurContent= varRobVLSFOInUseSuphurContent;
+        formData.robULSFOInUseSuphurContent= varRobULSFOInUseSuphurContent;
+        formData.robMGOInUseSuphurContent= varRobMGOInUseSuphurContent;
+        formData.robMGOLSInUseSuphurContent= varRobMGOLSInUseSuphurContent;
+        formData.robBilgeWater= varRobBilgeWater;
+        formData.loConsumptionSternTube= varLoConsumptionSternTube;
+        formData.loConsumptionCPP= varLoConsumptionCPP;
+        formData.loConsumptionReductionGearbox= varLoConsumptionReductionGearbox;
+        formData.loConsumptionAirCompressors= varLoConsumptionAirCompressors;
+        formData.loConsumptionBowthruster= varLoConsumptionBowthruster;
+        formData.loConsumptionHatchCover= varLoConsumptionHatchCover;
+        formData.comAuthor= varComAuthor;
+        formData.comAlarmCodes= varComAlarmCodes;
+        formData.comAlarmComments= varComAlarmComments;
+        formData.rcvdCylOilHi= varRcvdCylOilHi;
+        formData.rcvdCylOilLo= varRcvdCylOilLo;
+        formData.rcvdMeCircOil= varRcvdMeCircOil;
+        formData.rcvdAeCircOil= varRcvdAeCircOil;
+        formData.rcvdHsfo= varRcvdHsfo;
+        formData.rcvdUlsfo= varRcvdUlsfo;
+        formData.rcvdVlsfo= varRcvdVlsfo;
+        formData.rcvdHsmdoMgo= varRcvdHsmdoMgo;
+        formData.rcvdLsmdoMgo= varRcvdLsmdoMgo;
+        formData.rcvdFw= varRcvdFw;
+        formData.dischHfo= varDischHfo;
+        formData.dischHfoUls= varDischHfoUls;
+        formData.dischBilgeWater= varDischBilgeWater;
+        formData.dischSludge= varDischSludge;
+        formData.dischGarbage= varDischGarbage;
+        formData.appMeTcOneTempIn= varAppMeTcOneTempIn;
+        formData.appMeTcOneTempOut= varAppMeTcOneTempOut;
+        formData.appMeTcTwoTempIn= varAppMeTcTwoTempIn;
+        formData.appMeTcTwoTempOut= varAppMeTcTwoTempOut;
+        formData.appFoTempAtMeInlet= varAppFoTempAtMeInlet;
+        formData.appLoTempAtMeInlet= varAppLoTempAtMeInlet;
+        formData.appPistonCoolingLoPress= varAppPistonCoolingLoPress;
+        formData.appPistonCoolingAverageTempOut= varAppPistonCoolingAverageTempOut;
+        formData.appPistonCoolingMaxTempOut= varAppPistonCoolingMaxTempOut;
+        formData.appUnitWithHighestPistonCoolingTemp= varAppUnitWithHighestPistonCoolingTemp;
+        formData.appPistonUndersideAverageTemp= varAppPistonUndersideAverageTemp;
+        formData.appPistonUndersideHighestTemp= varAppPistonUndersideHighestTemp;
+        formData.appUnitWithHighestPistonUndersideTemp= varAppUnitWithHighestPistonUndersideTemp;
+        formData.appMeCoolingWaterPressure= varAppMeCoolingWaterPressure;
+        formData.appMeCoolingWaterAverageTemp= varAppMeCoolingWaterAverageTemp;
+        formData.appMeCoolingWaterHighestTemp= varAppMeCoolingWaterHighestTemp;
+        formData.appUnitWithHighestCoolingWaterTemp= varAppUnitWithHighestCoolingWaterTemp;
+        formData.appThermoOilTemp= varAppThermoOilTemp;
+        formData.appMeHfoFilterBackflush= varAppMeHfoFilterBackflush;
+        formData.appMeLoFilterBackflush= varAppMeLoFilterBackflush;
+        formData.appMeServoOilFilterBackflush= varAppMeServoOilFilterBackflush;
+        formData.runhrsMaineEngine= varRunhrsMaineEngine;
+        formData.runhrsAeOne= varRunhrsAeOne;
+        formData.runhrsAeTwo= varRunhrsAeTwo;
+        formData.runhrsAeThree= varRunhrsAeThree;
+        formData.runhrsAeFour= varRunhrsAeFour;
+        formData.runhrsEmcyGe= varRunhrsEmcyGe;
+        formData.runhrsBoilerBurner= varRunhrsBoilerBurner;
+        formData.runhrsShaftGenerator= varRunhrsShaftGenerator;
+        formData.runhrsAirCompressorOne= varRunhrsAirCompressorOne;
+        formData.runhrsAirCompressorTwo= varRunhrsAirCompressorTwo;
+        formData.runhrsAirCompressorThree= varRunhrsAirCompressorThree;
+        formData.runhrsAirCompressorFour= varRunhrsAirCompressorFour;
+        formData.runhrsHfoPurifierOne= varRunhrsHfoPurifierOne;
+        formData.runhrsHfoPurifierTwo= varRunhrsHfoPurifierTwo;
+        formData.runhrsMdoPurifier= varRunhrsMdoPurifier;
+        formData.runhrsMeLoPurifierOne= varRunhrsMeLoPurifierOne;
+        formData.runhrsMeLoPurifierTwo= varRunhrsMeLoPurifierTwo;
+        formData.runhrsGeLoPurifierOne= varRunhrsGeLoPurifierOne;
+        formData.runhrsGeLoPurifierTwo= varRunhrsGeLoPurifierTwo;
+        formData.runhrsProvRefPlantOne= varRunhrsProvRefPlantOne;
+        formData.runhrsProvRefPlantTwo= varRunhrsProvRefPlantTwo;
+        formData.runhrsFwg= varRunhrsFwg;
+        formData.runhrsIncinerator= varRunhrsIncinerator;
+        formData.runhrsCraneOne= varRunhrsCraneOne;
+        formData.runhrsCraneTwo= varRunhrsCraneTwo;
+        formData.runhrsCraneThree= varRunhrsCraneThree;
+        formData.runhrsCraneFour= varRunhrsCraneFour;
+        formData.runhrsCraneFive= varRunhrsCraneFive;
+        formData.captainInitials= varCaptainInitials;
+
 
 
 
@@ -44642,7 +44747,69 @@ $.ajax({
 
 
 
+ <!-- ✅ SCRIPT BLOCK: References and Setup -->
 
+  const dropzone = document.getElementById('dropzone');
+  const fileInput = document.getElementById('fileInput');
+  const fileList = document.getElementById('fileList');
+  let files = [];
+  
+
+
+<!-- ✅ SCRIPT BLOCK: File Handling and Auto-Attachment -->
+
+  dropzone.addEventListener('click', () => fileInput.click());
+  dropzone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropzone.classList.add('dragover');
+  });
+  dropzone.addEventListener('dragleave', () => {
+    dropzone.classList.remove('dragover');
+  });
+  dropzone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropzone.classList.remove('dragover');
+    handleFiles(e.dataTransfer.files);
+  });
+  fileInput.addEventListener('change', () => {
+    handleFiles(fileInput.files);
+    fileInput.value = '';
+  });
+
+  function handleFiles(fileListInput) {
+    const newFiles = [];
+    for (const file of fileListInput) {
+      if (!files.some(f => f.name === file.name && f.size === file.size)) {
+        files.push(file);
+        newFiles.push(file);
+      }
+    }
+    renderFileList();
+    appendToAttachedFiles(newFiles);
+  }
+
+  function renderFileList() {
+    fileList.innerHTML = files.map(f => `<div>${f.name} (${(f.size / 1024).toFixed(1)} KB)</div>`).join('');
+  }
+
+  function readFileAsBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve({
+        name: file.name,
+        type: file.type,
+        data: reader.result.split(',')[1]
+      });
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
+
+  async function appendToAttachedFiles(newFiles) {
+    const base64Files = await Promise.all(newFiles.map(readFileAsBase64));
+    reportJson.attachedFiles.push(...base64Files);
+    console.log('Updated reportJson:', reportJson);
+  }
 
 
 
